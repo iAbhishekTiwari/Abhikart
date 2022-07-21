@@ -6,14 +6,16 @@ import Navbar from '../components/Navbar';
 import ProductsCarousel from '../components/ProductsCarousel';
 import CategoriesCarousel from '../components/CategoriesCarousel';
 import styles from '../styles/Home.module.css'
+import SearchResults from '../components/searchResults';
 
-export default function Home({items}) {
+export default function Home({items, appliances, phones}) {
   return (
 
       <div className='bg-gray-200'>
         <Navbar />
         <CategoriesCarousel />
-        <ProductsCarousel />
+        <ProductsCarousel appliances={appliances} phones={phones} />
+        <SearchResults items={items}/>
         <Footer />
       </div>
   )
@@ -29,9 +31,17 @@ export async function getServerSideProps(context) {
   const query = `*[_type == "product"]`;
   const items = await client.fetch(query);
 
+  const phonequery = `*[_type == "product" && references('40e53406-4e17-47cf-a837-a4511fe8df89')]`;
+  const phones = await client.fetch(phonequery);
+
+  const appliancequery = `*[_type == "product" && references('914be9aa-b2fd-4f87-aba3-6d27155d9840')]`;
+  const appliances = await client.fetch(appliancequery);
+
   return {
     props: {
       items,
+      phones,
+      appliances
     },
   };
 }

@@ -3,14 +3,30 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 import Link from "next/link"
 import { BiChevronDown } from 'react-icons/bi';
+import { useRecoilValue } from "recoil";
+import { searchState } from "../atoms/searchAtom";
+import Lottie from "lottie-react";
+import buy from "./buy.json"
+import allinone from "./allinone.json"
+import bikedelivery from "./bikedelivery.json"
+import packed from "./packed.json"
+import truck from "./truck.json"
+import homedelivery from "./homedelivery.json"
 
 
 const CategoriesCarousel = () => {
+
+    const style = {
+        height: 200,
+      };
+
+    const search = useRecoilValue(searchState);
+
     const Fashion = useRef();
     const Electronics = useRef();
     const Beauty = useRef();
 
-   
+
     const FashionDD = () => {
       if (Fashion.current.classList.contains("hidden")) {
         Fashion.current.classList.remove("hidden");
@@ -48,25 +64,13 @@ const CategoriesCarousel = () => {
       Beauty.current.classList.add("hidden");
     };
 
-
+    if(search==''){
   return (
     <>
      <div className="flex w-full justify-evenly border-b-6 border-gray-400">
-                  <Link href={"/#{topOffers}"}>
-                      <div className="flex flex-col justify-center cursor-pointer hover:text-blue-500">
-                          <div>
-                              <img
-                                  src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100"
-                                  alt=""
-                                  className="h-20 w-20" />
-                          </div>
-                          <div className="font-semibold text-center text-sm">
-                              Top Offers
-                          </div>
-                      </div>
-                  </Link>
+                  
                   <Link href={"/category/grocery"}>
-                      <div className="flex flex-col justify-center cursor-pointer hover:text-blue-500">
+                      <div className="md:flex flex-col justify-center cursor-pointer hover:text-blue-500 hidden">
                           <div>
                               <img
                                   src="https://rukminim1.flixcart.com/flap/128/128/image/29327f40e9c4d26b.png?q=100"
@@ -77,7 +81,7 @@ const CategoriesCarousel = () => {
                       </div>
                   </Link>
                   <Link href={"/category/mobile-phone"}>
-                      <div className="flex flex-col justify-center cursor-pointer hover:text-blue-500">
+                      <div className="md:flex flex-col justify-center cursor-pointer hover:text-blue-500 hidden">
                           <div>
                               <img
                                   src="https://rukminim1.flixcart.com/flap/128/128/image/22fddf3c7da4c4f4.png?q=100"
@@ -98,14 +102,14 @@ const CategoriesCarousel = () => {
                           <img
                               src="https://rukminim1.flixcart.com/flap/128/128/image/c12afc017e6f24cb.png?q=100"
                               alt=""
-                              className="h-20 w-20" />
+                              className="md:h-20 md:w-20 h-12 w-12 mx-auto" />
                       </div>
                       <div className="font-semibold text-center text-sm flex items-center justify-center">
                           Fashion <BiChevronDown />
                       </div>
                       <div
                           ref={Fashion}
-                          className="hidden absolute top-[11.25rem] z-10 shadow-2xl bg-white p-3 space-y-4"
+                          className="hidden absolute top-[10.75rem] z-10 shadow-2xl bg-white p-3 space-y-4"
                       >
                           <Link href={"/category/mens-top-wear"}>
                               <p className="text-black hover:bg-gray-200 hover:text-blue-700 font-medium">
@@ -148,14 +152,14 @@ const CategoriesCarousel = () => {
                           <img
                               src="https://rukminim1.flixcart.com/flap/128/128/image/69c6589653afdb9a.png?q=100"
                               alt=""
-                              className="h-20 w-20" />
+                              className="md:h-20 md:w-20 h-12 w-12 mx-auto" />
                       </div>
                       <div className="font-semibold text-center text-sm flex items-center justify-center">
                           Electronics <BiChevronDown />
                       </div>
                       <div
                           ref={Electronics}
-                          className="hidden absolute top-[11.25rem] z-10 shadow-2xl bg-white p-3 space-y-4"
+                          className="hidden absolute top-[10.75rem] z-10 shadow-2xl bg-white p-3 space-y-4"
                       >
                           <Link href={"/category/laptop"}>
                               <p className="text-black hover:bg-gray-200 hover:text-blue-700 font-medium">
@@ -185,12 +189,12 @@ const CategoriesCarousel = () => {
                       </div>
                   </div>
                   <Link href={"/category/appliances"}>
-                      <div className="flex flex-col justify-center cursor-pointer hover:text-blue-500">
+                      <div className="md:flex flex-col justify-center cursor-pointer hover:text-blue-500 hidden">
                           <div>
                               <img
                                   src="https://rukminim1.flixcart.com/flap/128/128/image/0ff199d1bd27eb98.png?q=100"
                                   alt=""
-                                  className="h-20 w-20" />
+                                  className="md:h-20 md:w-20 h-12 w-12 mx-auto" />
                           </div>
                           <div className="font-semibold text-center text-sm">
                               Appliances
@@ -207,14 +211,14 @@ const CategoriesCarousel = () => {
                           <img
                               src="https://rukminim1.flixcart.com/flap/128/128/image/dff3f7adcf3a90c6.png?q=100"
                               alt=""
-                              className="h-20 w-20 mx-auto" />
+                              className="md:h-20 md:w-20 h-12 w-12 mx-auto" />
                       </div>
                       <div className="font-semibold text-center text-sm flex items-center justify-center">
                           Beauty, Toys and More <BiChevronDown />
                       </div>
                       <div
                           ref={Beauty}
-                          className="hidden absolute top-[11.25rem] z-10 shadow-2xl bg-white p-3 space-y-4"
+                          className="hidden absolute top-[10.75rem] z-10 shadow-2xl bg-white p-3 space-y-4"
                       >
                           <Link href={"/category/beauty&personal-care"}>
                               <p className="text-black hover:bg-gray-200 hover:text-blue-700 font-medium">
@@ -254,18 +258,51 @@ const CategoriesCarousel = () => {
                   dynamicHeight={false}
                   showStatus={false}
               >
-                      <div>
+                      <div className="relative">
                           <img src="/assets/c1-headphones.jpg" className="relative" />
-
+                          <div className="absolute flex justify-around items-center gap-6 bottom-8 sm:bottom-12 md:bottom-14 lg:bottom-20 w-full overflow-hidden">
+                            <div className="flex flex-col bg-white p-2 text-blue-600 rounded-full overflow-hidden h-12 w-12 sm:w-20 sm:h-20 md:h-28 md:w-28 lg:w-40 lg:h-40 object-contain object-center items-center justify-center">
+                               <Lottie animationData={buy} />
+                            </div>
+                            <div className="flex flex-col bg-white p-2 text-blue-600 rounded-full overflow-hidden h-12 w-12 sm:w-20 sm:h-20 md:h-28 md:w-28 lg:w-40 lg:h-40 object-contain object-center items-center justify-center">
+                              <Lottie animationData={packed} />
+                            </div>
+                            <div className="flex flex-col bg-white p-2 text-blue-600 rounded-full overflow-hidden h-12 w-12 sm:w-20 sm:h-20 md:h-28 md:w-28 lg:w-40 lg:h-40 object-contain object-top items-center justify-center">
+                            <Lottie animationData={allinone} />
+                            </div>
+                            <div className="flex flex-col bg-white p-2 text-blue-600 rounded-full overflow-hidden h-12 w-12 sm:w-20 sm:h-20 md:h-28 md:w-28 lg:w-40 lg:h-40 object-contain object-center items-center justify-center">
+                               <Lottie animationData={bikedelivery} />
+                            </div>
+                            <div className="flex flex-col bg-white p-2 text-blue-600 rounded-full overflow-hidden h-12 w-12 sm:w-20 sm:h-20 md:h-28 md:w-28 lg:w-40 lg:h-40 object-contain object-center items-center justify-center">
+                              <Lottie animationData={homedelivery} />
+                            </div>
+                          </div>
 
                       </div>
-                      <div>
+                      <div className="relative">
                           <img src="/assets/c2-electronics.jpg" />
+                          <div className="absolute flex justify-around items-center gap-6 bottom-8 sm:bottom-12 md:bottom-14 lg:bottom-20 w-full overflow-hidden">
+                            <div className="flex flex-col bg-white p-2 text-blue-600 rounded-full overflow-hidden h-12 w-12 sm:w-20 sm:h-20 md:h-28 md:w-28 lg:w-40 lg:h-40 object-contain object-center items-center justify-center">
+                               <Lottie animationData={buy} />
+                            </div>
+                            <div className="flex flex-col bg-white p-2 text-blue-600 rounded-full overflow-hidden h-12 w-12 sm:w-20 sm:h-20 md:h-28 md:w-28 lg:w-40 lg:h-40 object-contain object-center items-center justify-center">
+                              <Lottie animationData={packed} />
+                            </div>
+                            <div className="flex flex-col bg-white p-2 text-blue-600 rounded-full overflow-hidden h-12 w-12 sm:w-20 sm:h-20 md:h-28 md:w-28 lg:w-40 lg:h-40 object-contain object-top items-center justify-center">
+                            <Lottie animationData={allinone} />
+                            </div>
+                            <div className="flex flex-col bg-white p-2 text-blue-600 rounded-full overflow-hidden h-12 w-12 sm:w-20 sm:h-20 md:h-28 md:w-28 lg:w-40 lg:h-40 object-contain object-center items-center justify-center">
+                               <Lottie animationData={bikedelivery} />
+                            </div>
+                            <div className="flex flex-col bg-white p-2 text-blue-600 rounded-full overflow-hidden h-12 w-12 sm:w-20 sm:h-20 md:h-28 md:w-28 lg:w-40 lg:h-40 object-contain object-center items-center justify-center">
+                              <Lottie animationData={homedelivery} />
+                            </div>
+                          </div>
                       </div>
                   </Carousel>
           
           </>
-  );
+  )}
 };
 
 export default CategoriesCarousel;
