@@ -3,6 +3,7 @@ import React, { Component, useRef, useState } from 'react';
 import { createClient } from "next-sanity";
 import imageUrlBuilder from '@sanity/image-url'
 import Link from "next/link"
+import Image from "next/image"
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { cartState } from '../../atoms/cartAtom';
 import Navbar from '../../components/Navbar';
@@ -80,7 +81,7 @@ const Category = ({ products }) => {
                 <div className="flex gap-4 cursor-pointer flex-col">
                   <div>
                     <a className="block relative h-48 rounded overflow-hidden justify-center">
-                      <img
+                      <Image
                         alt="ecommerce"
                         className="object-contain object-center w-full h-full block"
                         src={builder.image(product.image).width(300).url()} />
@@ -114,7 +115,7 @@ const Category = ({ products }) => {
                 <div className="flex gap-4 cursor-pointer flex-col">
                   <div>
                     <a className="block relative h-48 rounded overflow-hidden justify-center">
-                      <img
+                      <Image
                         alt="ecommerce"
                         className="object-contain object-center w-full h-full block"
                         src={builder.image(product.image).width(300).url()} />

@@ -4,6 +4,7 @@ import imageUrlBuilder from "@sanity/image-url";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Link from "next/link"
+import Image from "next/image"
 import { useRecoilValue } from "recoil";
 import { searchState } from "../atoms/searchAtom";
 
@@ -92,7 +93,7 @@ const ProductsCarousel = ({ phones, appliances }) => {
               <Link href={"/product/" + item.slug.current} key={"item.slug.current"} >
                 <div className="w-auto mx-4">
                   <a className="block relative h-48 rounded overflow-hidden">
-                    <img
+                    <Image
                       alt="ecommerce"
                       className="object-contain object-center w-full h-full block"
                       src={builder.image(item.image).width(200).url()}
@@ -181,7 +182,7 @@ const ProductsCarousel = ({ phones, appliances }) => {
               <Link href={"/product/" + item.slug.current} key={item.slug.current}>
                 <div className="w-auto mx-4">
                   <a className="block relative h-48 rounded overflow-hidden">
-                    <img
+                    <Image
                       alt="ecommerce"
                       className="object-contain object-center w-full h-full block"
                       src={builder.image(item.image).width(200).url()}

@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image"
 
 
 
@@ -8,7 +9,7 @@ const Footer = () => {
       <div className="py-8 px-12">
         <h5 className="text-blue-600 font-semibold my-2 text-base">
           {" "}
-          Flipkart: The One-stop Shopping Destination E-commerce
+          Abhikart: The One-stop Shopping Destination E-commerce
         </h5>
         <p className="text-sm">
           E-commerce is revolutionizing the way we all shop in India. Why do you
@@ -196,7 +197,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <a className="text-white text-sm hover:text-blue-700">
-                      Flipkart Stories
+                      Abhikart Stories
                     </a>
                   </li>
                 </nav>
@@ -282,7 +283,7 @@ const Footer = () => {
                   Mail Us:
                 </h2>
                 <div className="text-white text-sm">
-                  Flipkart Internet Private Limited, Buildings Alyssa, Begonia &
+                  Abhikart Internet Private Limited, Buildings Alyssa, Begonia &
                   Clove Embassy Tech Village, Outer Ring Road,
                   Devarabeesanahalli Village, Bengaluru, 560103, Karnataka,
                   India
@@ -293,7 +294,7 @@ const Footer = () => {
                   Registered Office Address:
                 </h2>
                 <div className="text-white text-sm">
-                  Flipkart Internet Private Limited, Buildings Alyssa, Begonia &
+                  Abhikart Internet Private Limited, Buildings Alyssa, Begonia &
                   Clove Embassy Tech Village, Outer Ring Road,
                   Devarabeesanahalli Village, Bengaluru, 560103, Karnataka,
                   India CIN : U51109KA2012PTC066107 Telephone: 044-45614700
@@ -305,10 +306,7 @@ const Footer = () => {
            
             <div className="flex justify-between items-center mt-3 pb-2">
              <div className="ml-2 text-white">
-               © 2007-2022 Flipkart.com
-             </div>
-             <div className="flex space-x-2 mr-2">
-              <img src="https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/payment-method_69e7ec.svg" alt="" />
+               © 2022 abhikart.com
              </div>
             </div>
           </div>

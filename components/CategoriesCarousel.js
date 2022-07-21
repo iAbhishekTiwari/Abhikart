@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import Link from "next/link"
+import Image from "next/image"
 import { BiChevronDown } from 'react-icons/bi';
 import { useRecoilValue } from "recoil";
 import { searchState } from "../atoms/searchAtom";
@@ -72,7 +73,7 @@ const CategoriesCarousel = () => {
                   <Link href={"/category/grocery"}>
                       <div className="md:flex flex-col justify-center cursor-pointer hover:text-blue-500 hidden">
                           <div>
-                              <img
+                              <Image
                                   src="https://rukminim1.flixcart.com/flap/128/128/image/29327f40e9c4d26b.png?q=100"
                                   alt=""
                                   className="h-20 w-20" />
@@ -83,7 +84,7 @@ const CategoriesCarousel = () => {
                   <Link href={"/category/mobile-phone"}>
                       <div className="md:flex flex-col justify-center cursor-pointer hover:text-blue-500 hidden">
                           <div>
-                              <img
+                              <Image 
                                   src="https://rukminim1.flixcart.com/flap/128/128/image/22fddf3c7da4c4f4.png?q=100"
                                   alt=""
                                   className="h-20 w-20" />
@@ -99,7 +100,7 @@ const CategoriesCarousel = () => {
                       onMouseLeave={FashionDDout}
                   >
                       <div>
-                          <img
+                          <Image 
                               src="https://rukminim1.flixcart.com/flap/128/128/image/c12afc017e6f24cb.png?q=100"
                               alt=""
                               className="md:h-20 md:w-20 h-12 w-12 mx-auto" />
@@ -149,7 +150,7 @@ const CategoriesCarousel = () => {
                       onMouseLeave={ElectronicsDDout}
                   >
                       <div>
-                          <img
+                          <Image 
                               src="https://rukminim1.flixcart.com/flap/128/128/image/69c6589653afdb9a.png?q=100"
                               alt=""
                               className="md:h-20 md:w-20 h-12 w-12 mx-auto" />
@@ -191,7 +192,7 @@ const CategoriesCarousel = () => {
                   <Link href={"/category/appliances"}>
                       <div className="md:flex flex-col justify-center cursor-pointer hover:text-blue-500 hidden">
                           <div>
-                              <img
+                              <Image 
                                   src="https://rukminim1.flixcart.com/flap/128/128/image/0ff199d1bd27eb98.png?q=100"
                                   alt=""
                                   className="md:h-20 md:w-20 h-12 w-12 mx-auto" />
@@ -208,7 +209,7 @@ const CategoriesCarousel = () => {
                       onMouseLeave={BeautyDDout}
                   >
                       <div className="w-full">
-                          <img
+                          <Image 
                               src="https://rukminim1.flixcart.com/flap/128/128/image/dff3f7adcf3a90c6.png?q=100"
                               alt=""
                               className="md:h-20 md:w-20 h-12 w-12 mx-auto" />
@@ -259,7 +260,7 @@ const CategoriesCarousel = () => {
                   showStatus={false}
               >
                       <div className="relative">
-                          <img src="/assets/c1-headphones.jpg" className="relative" />
+                          <Image  src="/assets/c1-headphones.jpg" className="relative" />
                           <div className="absolute flex justify-around items-center gap-6 bottom-8 sm:bottom-12 md:bottom-14 lg:bottom-20 w-full overflow-hidden">
                             <div className="flex flex-col bg-white p-2 text-blue-600 rounded-full overflow-hidden h-12 w-12 sm:w-20 sm:h-20 md:h-28 md:w-28 lg:w-40 lg:h-40 object-contain object-center items-center justify-center">
                                <Lottie animationData={buy} />
@@ -280,7 +281,7 @@ const CategoriesCarousel = () => {
 
                       </div>
                       <div className="relative">
-                          <img src="/assets/c2-electronics.jpg" />
+                          <Image  src="/assets/c2-electronics.jpg" />
                           <div className="absolute flex justify-around items-center gap-6 bottom-8 sm:bottom-12 md:bottom-14 lg:bottom-20 w-full overflow-hidden">
                             <div className="flex flex-col bg-white p-2 text-blue-600 rounded-full overflow-hidden h-12 w-12 sm:w-20 sm:h-20 md:h-28 md:w-28 lg:w-40 lg:h-40 object-contain object-center items-center justify-center">
                                <Lottie animationData={buy} />

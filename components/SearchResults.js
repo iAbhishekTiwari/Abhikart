@@ -2,6 +2,7 @@ import React from 'react'
 import { useRecoilValue } from 'recoil';
 import { searchState } from '../atoms/searchAtom';
 import Link from "next/link"
+import Image from "next/image"
 import { createClient } from 'next-sanity';
 import ImageUrlBuilder from '@sanity/image-url';
 
@@ -36,7 +37,7 @@ const SearchResults = ({items}) => {
                 <div className="flex gap-4 cursor-pointer flex-col">
                    <div>
                     <a className="block relative h-48 rounded overflow-hidden justify-center">
-                      <img
+                      <Image
                         alt="ecommerce"
                         className="object-contain object-center w-full h-full block"
                         src={builder.image(product.image).width(300).url()}

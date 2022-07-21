@@ -8,6 +8,7 @@ import { useRecoilState } from "recoil";
 import { cartState } from "../atoms/cartAtom";
 import { searchState } from "../atoms/searchAtom";
 import Link from "next/link"
+import Image from "next/image"
 import { subtotalState } from "../atoms/subtotalAtom";
 import { createClient } from "next-sanity";
 import ImageUrlBuilder from "@sanity/image-url";
@@ -106,7 +107,7 @@ const Navbar = ({ items }) => {
       <div className="bg-blue-600 p-2 md:p-4 flex align-middle">
 
     <Link href={"/"}>
-    <img src="/AKrbg.png" className="w-16 md:w-20 absolute top-[-.25rem] md:left-16 left-4 hidden sm:block"  alt="" /></Link>
+    <Image src="/AKrbg.png" className="w-16 md:w-20 absolute top-[-.25rem] md:left-16 left-4 hidden sm:block"  alt="" /></Link>
         <div className="flex w-full sm:justify-center">
           <input
             className="outline-none p-1 ml-2 w-3/5 sm:w-2/5"
@@ -203,7 +204,7 @@ const Navbar = ({ items }) => {
             </p>
           </div>}
           
-          { session && <button onClick={signOut}> <img src={session.user.image} alt="" className="rounded-full w-9 h-8"/> </button>}
+          { session && <button onClick={signOut}> <Image src={session.user.image} alt="" className="rounded-full w-9 h-8"/> </button>}
           { !session && <button onClick={signIn} className="bg-white text-blue-600 font-medium md:font-bold px-4 rounded-full">Login</button>}
       </div>
     </header>
