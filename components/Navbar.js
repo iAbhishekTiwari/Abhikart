@@ -13,7 +13,6 @@ import { subtotalState } from "../atoms/subtotalAtom";
 import { createClient } from "next-sanity";
 import ImageUrlBuilder from "@sanity/image-url";
 import Lottie from "lottie-react";
-import knotanimation from "./knotanimation.json"
 import { useSession, signIn, signOut } from "next-auth/react"
 
 
