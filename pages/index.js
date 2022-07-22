@@ -5,8 +5,7 @@ import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import ProductsCarousel from '../components/ProductsCarousel';
 import CategoriesCarousel from '../components/CategoriesCarousel';
-import styles from '../styles/Home.module.css'
-import SearchResults from '../components/searchResults';
+import SearchResults from '../components/SearchResults';
 
 export default function Home({items, appliances, phones}) {
   return (
