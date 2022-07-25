@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { createClient } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
 import Link from "next/link";
-import Image from "next/image";
+;
 import { RiStarFill } from "react-icons/ri";
 import { BiChevronDown } from "react-icons/bi";
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
@@ -214,7 +214,7 @@ const products = ({ products }) => {
                       <div className="flex gap-4 cursor-pointer flex-col">
                         <div>
                           <a className="block relative h-48 rounded overflow-hidden justify-center">
-                            <Image
+                            <img
                               alt="ecommerce"
                               className="object-contain object-center w-full h-full block"
                               src={builder

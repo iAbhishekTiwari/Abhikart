@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image"
+
 
 
 
@@ -15,7 +15,7 @@ const Footer = () => {
           E-commerce is revolutionizing the way we all shop in India. Why do you
           want to hop from one store to another in search of the latest phone
           when you can find it on the Internet in a single click? Not only
-          mobiles. Flipkart houses everything you can possibly imagine, from
+          mobiles. Abhikart houses everything you can possibly imagine, from
           trending electronics like laptops, tablets, smartphones, and mobile
           accessories to in-vogue fashion staples like shoes, clothing and
           lifestyle accessories; from modern furniture like sofa sets, dining
@@ -25,11 +25,11 @@ const Footer = () => {
           cushion covers, mattresses and bedsheets to toys and musical
           instruments, we got them all covered. You name it, and you can stay
           assured about finding them all here. For those of you with erratic
-          working hours, Flipkart is your best bet. Shop in your PJs, at night
+          working hours, Abhikart is your best bet. Shop in your PJs, at night
           or in the wee hours of the morning. This e-commerce never shuts down.
         </p>
         <h5 className="text-blue-600 font-semibold my-2 text-base">
-          What Can You Buy From Flipkart? <br /> Mobile Phones
+          What Can You Buy From Abhikart? <br /> Mobile Phones
         </h5>
         <p className="text-sm">
           From budget phones to state-of-the-art smartphones, we have a mobile
@@ -39,12 +39,12 @@ const Footer = () => {
           space, we take care of all the essentials. Shop from top brands in the
           country like Samsung, Apple, Oppo, Xiaomi, Realme, Vivo, and Honor to
           name a few. Rest assured, you're buying from only the most reliable
-          names in the market. What's more, with Flipkart's Complete Mobile
+          names in the market. What's more, with Abhikart's Complete Mobile
           Protection Plan, you will never again find the need to run around
           service centres. This plan entails you to a number of post-purchase
           solutions, starting at as low as Rupees 99 only! Broken screens,
           liquid damage to phone, hardware and software glitches, and
-          replacements - the Flipkart Complete Mobile Protection covers a
+          replacements - the Abhikart Complete Mobile Protection covers a
           comprehensive range of post-purchase problems, with door-to-door
           services.
         </p>
@@ -89,7 +89,7 @@ const Footer = () => {
           one roof. Our Dependable TV and Appliance Store ensures zero transit
           damage, with a replacement guarantee if anything goes wrong; delivery
           and installation as per your convenience and a double warranty
-          (Official Brand Warranty along with an extended Flipkart Warranty) -
+          (Official Brand Warranty along with an extended Abhikart Warranty) -
           rest assured, value for money is what is promised and delivered. Shop
           from market leaders in the country like Samsung, LG, Whirlpool, Midea,
           Mi, Vu, Panasonic, Godrej, Sony, Daikin, and Hitachi among many
@@ -109,7 +109,7 @@ const Footer = () => {
           Lifestyle
         </h5>
         <p className="text-sm">
-          Flipkart, 'India ka Fashion Capital', is your one-stop fashion
+          Abhikart, 'India ka Fashion Capital', is your one-stop fashion
           destination for anything and everything you need to look good. Our
           exhaustive range of Western and Indian wear, summer and winter
           clothing, formal and casual footwear, bridal and artificial jewellery,
@@ -122,7 +122,7 @@ const Footer = () => {
           up to date. Explore our in-house brands like Metronaut, Anmi, and
           Denizen, to name a few, for carefully curated designs that are the
           talk of the town. Get ready to be spoiled for choice.Festivals, office
-          get-togethers, weddings, brunches, or nightwear - Flipkart will have
+          get-togethers, weddings, brunches, or nightwear - Abhikart will have
           your back each time.
         </p>
         <h5 className="text-blue-600 font-semibold my-2 text-base">
@@ -145,7 +145,7 @@ const Footer = () => {
           they could end up looking flat and incomplete without complementary
           decor. Curtains, cushion covers, bed sheets, wall shelves, paintings,
           floor lamps - find everything that turns a house to an inviting home
-          under one roof at Flipkart.
+          under one roof at Abhikart.
         </p>
         <h5 className="text-blue-600 font-semibold my-2 text-base">
           Baby and Kids

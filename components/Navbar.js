@@ -12,7 +12,7 @@ import Image from "next/image"
 import { subtotalState } from "../atoms/subtotalAtom";
 import { createClient } from "next-sanity";
 import ImageUrlBuilder from "@sanity/image-url";
-import Lottie from "lottie-react";
+import ReactTooltip from 'react-tooltip';
 import { useSession, signIn, signOut } from "next-auth/react"
 
 
@@ -94,20 +94,17 @@ const Navbar = ({ items }) => {
     }
   }, []);
 
-  const style = {
-    width: 40,
-  };
-  
-
   const [showcart, setshowcart] = useState(false)
 
   return (
     <header className="sticky top-0 z-50">
+    
       <div className="bg-blue-600 p-2 md:p-4 flex align-middle">
-
+     <div className="w-1/6 relative p-0">
     <Link href={"/"}>
-    <Image src="/AKrbg.png" className="w-16 md:w-20 absolute top-[-.25rem] md:left-16 left-4 hidden sm:block"  alt="" /></Link>
-        <div className="flex w-full sm:justify-center">
+      <div className="block h-full">
+    <Image src="/AKrbgLogo.webP" layout="fill" objectFit="contain" className="hidden sm:block" alt="" /></div></Link></div>
+        <div className="flex w-full mx-auto justify-center">
           <input
             className="outline-none p-1 ml-2 w-3/5 sm:w-2/5"
             type="search"
@@ -116,7 +113,7 @@ const Navbar = ({ items }) => {
             placeholder="Search for products, brands and more"
             onChange={(e) => setSearch(e.target.value)}
           />
-          <BsSearch className="w-6 h-10 bg-white pr-1 text-blue-700 font-bold" />
+          <BsSearch className="w-6 h-full bg-white pr-1 text-blue-700 font-bold" />
         </div>
         <p
           className="flex text-white font-bold items-center mr-4 md:mr-8 cursor-pointer"
@@ -126,8 +123,8 @@ const Navbar = ({ items }) => {
           Cart
         </p>
         { showcart &&
-          <div className="absolute z-10 bg-gradient-to-r from-gray-700 via-gray-900 to-black shadow-2xl text-xl text-white top-0 right-0 rounded-md rounded-r-none max-w-full overflow-x-hidden pr-4 overflow-y-scroll">
-            <div className="sideCart z-200 font-semibold md:font-bold underline flex justify-around text-lg md:text-2xl my-4">
+          <div className="absolute z-10 bg-gradient-to-r from-gray-700 via-gray-900 to-black shadow-2xl text-xl text-white top-0 right-0 rounded-md rounded-r-none max-w-full pr-4 overflow-y-scroll h-screen">
+            <div><div className="sideCart z-200 font-semibold md:font-bold underline flex justify-around text-lg md:text-2xl my-4">
               <span className="m-auto">Items In Your Cart</span>
               <span>
                 <AiFillCloseCircle className="absolute top-4 right-4 hover:cursor-pointer" onClick={() => setshowcart(false) }/>
@@ -143,7 +140,7 @@ const Navbar = ({ items }) => {
               return (
                 <div key={k} className="flex m-8 gap-6 items-center">
                   <span className="w-1/5">
-                    < img alt="ecommerce" className="object-contain rounded border-gray-200 border-2 p-4 bg-white" src={builder.image(cart[k].image).width(60).url()} />
+                    <img alt="ecommerce" className="object-contain rounded border-gray-200 border-2 p-4 bg-white" src={builder.image(cart[k].image).width(60).url()} />
                   </span>  
                   <span className="w-2/6 text-center">{cart[k].brand}<p className="text-sm">({cart[k].title})</p></span>
                   <span className="w-1/6 flex my-auto">
@@ -178,7 +175,7 @@ const Navbar = ({ items }) => {
                   <span className="w-1/6 my-auto">
                     {" "}
                     ₹{(cart[k].price * cart[k].qty).toFixed(2)}
-                    <span className="line-through">₹{(cart[k].mrp * cart[k].qty).toFixed(2)}</span>
+                    <span className="line-through block sm:inline-block">₹{(cart[k].mrp * cart[k].qty).toFixed(2)}</span>
                   </span>
                 </div>
               );
@@ -189,7 +186,7 @@ const Navbar = ({ items }) => {
               </span>
             </div>
 
-            <Link href={"/Contact"}>
+            <Link href={"https://abhishekTiwari.vercel.app/"}>
               <button className="bg-white p-2 md:p-3 rounded-3xl m-4 block mx-auto cursor-pointer font-medium md:font-semibold mt-8 text-blue-600">
                 <BsFillBagCheckFill className="inline mb-1 mr-1" />
                 Checkout
@@ -201,9 +198,12 @@ const Navbar = ({ items }) => {
             >
               Clear Cart
             </p>
-          </div>}
+          </div></div>}
           
-          { session && <button onClick={signOut}> <Image src={session.user.image} alt="" className="rounded-full w-9 h-8"/> </button>}
+          { session && <button data-tip={`Hi! ${session.user.name}`} onClick={signOut} className="flex justify-center items-center"> <img src={session.user.image} className="rounded-full w-8" alt=""/></button>}
+           { session && 
+              <ReactTooltip /> 
+            }
           { !session && <button onClick={signIn} className="bg-white text-blue-600 font-medium md:font-bold px-4 rounded-full">Login</button>}
       </div>
     </header>

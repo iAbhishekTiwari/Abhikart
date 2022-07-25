@@ -4,8 +4,7 @@ import { createClient } from "next-sanity";
 import imageUrlBuilder from '@sanity/image-url'
 import Link from "next/link"
 import Image from "next/image"
-import { useRecoilState, useRecoilValue } from 'recoil';
-import { cartState } from '../../atoms/cartAtom';
+import { useRecoilValue } from 'recoil';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import { searchState } from '../../atoms/searchAtom';
@@ -65,7 +64,7 @@ const Category = ({ products }) => {
          </div>
       </div>
       <hr />
-      <div className="grid grid-cols-2 md:grid-cols-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
         { search=='' && products.filter(item => item?.category?.category?.title == slug).sort((a, b) => {
           if(sortby =='Price-Low To High')
             return parseFloat(a.price) - parseFloat(b.price)
@@ -82,6 +81,7 @@ const Category = ({ products }) => {
                   <div>
                     <a className="block relative h-48 rounded overflow-hidden justify-center">
                       <Image
+                        layout="fill"
                         alt="ecommerce"
                         className="object-contain object-center w-full h-full block"
                         src={builder.image(product.image).width(300).url()} />
@@ -115,7 +115,7 @@ const Category = ({ products }) => {
                 <div className="flex gap-4 cursor-pointer flex-col">
                   <div>
                     <a className="block relative h-48 rounded overflow-hidden justify-center">
-                      <Image
+                      <img
                         alt="ecommerce"
                         className="object-contain object-center w-full h-full block"
                         src={builder.image(product.image).width(300).url()} />

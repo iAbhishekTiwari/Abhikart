@@ -7,7 +7,9 @@ import { useRecoilState } from 'recoil';
 import { cartState } from '../../atoms/cartAtom';
 import { subtotalState } from '../../atoms/subtotalAtom';
 import Navbar from '../../components/Navbar';
-import { AiOutlineStar, AiFillStar } from "react-icons/ai";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import { AiFillStar } from "react-icons/ai";
 
 const Product = ({ product }) => {
 
@@ -51,9 +53,20 @@ const Product = ({ product }) => {
 
   return (
       <div className= "bg-gray-200" >
+        
         <Navbar />
-        {}
         <section className="text-gray-600 bg-white body-font overflow-hidden">
+        <ToastContainer
+position="bottom-center"
+autoClose={2000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+/>
          <div className="container px-5 py-24 mx-auto ">
           <div className="lg:w-4/5 mx-auto flex flex-wrap gap-8 justify-center">
            < img alt="ecommerce" className="object-contain rounded border-gray-200 border-2 p-4 bg-white" src={builder.image(product.image).width(200).url()} />
@@ -77,7 +90,7 @@ const Product = ({ product }) => {
         <div className="flex">
           <span className="title-font font-medium text-lg sm:text-2xl text-black"> ₹{product.price}</span>
           <span className=" block title-font text-gray-500 line-through mx-1"> ₹{product.mrp}</span>
-          <Link href={"/buyNow"}><button className="flex ml-auto text-white bg-indigo-500 border-0 py-1 px-3 sm:py-2 sm:px-6 focus:outline-none hover:bg-indigo-600 rounded"> Buy Now</button></Link>
+          <Link href={"https://abhishekTiwari.vercel.app/"}><button className="flex ml-auto text-white bg-indigo-500 border-0 py-1 px-3 sm:py-2 sm:px-6 focus:outline-none hover:bg-indigo-600 rounded"> Buy Now</button></Link>
           <button className="flex ml-8 lg:ml-auto text-white bg-orange-500 border-0 py-1 px-3 sm:py-2 sm:px-6  focus:outline-none hover:bg-indigo-600 rounded" onClick={() => {
                     addtocart(
                       slug,
@@ -89,7 +102,16 @@ const Product = ({ product }) => {
                       `${product.mrp}`,
                       `${product.rating}`,
                       `${product.numReviews}`
-                    )}}>Add To Cart</button>
+                    );
+                    toast.success('Item added to cart!', {
+                      position: "top-center",
+                      autoClose: 2000,
+                      hideProgressBar: false,
+                      closeOnClick: true,
+                      pauseOnHover: true,
+                      draggable: true,
+                      progress: undefined,
+                      });}}>Add To Cart</button>
 
         </div>
       </div>

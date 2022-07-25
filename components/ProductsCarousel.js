@@ -5,6 +5,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Link from "next/link"
 import Image from "next/image"
+
 import { useRecoilValue } from "recoil";
 import { searchState } from "../atoms/searchAtom";
 
@@ -91,9 +92,10 @@ const ProductsCarousel = ({ phones, appliances }) => {
             {phones.map((item) => {
               return (
               <Link href={"/product/" + item.slug.current} key={"item.slug.current"} >
-                <div className="w-auto mx-4">
+                <div className="w-auto mx-4 shadow-md">
                   <a className="block relative h-48 rounded overflow-hidden">
                     <Image
+                      layout="fill"
                       alt="ecommerce"
                       className="object-contain object-center w-full h-full block"
                       src={builder.image(item.image).width(200).url()}
@@ -180,9 +182,10 @@ const ProductsCarousel = ({ phones, appliances }) => {
             {appliances.map((item) => {
               return (
               <Link href={"/product/" + item.slug.current} key={item.slug.current}>
-                <div className="w-auto mx-4">
+                <div className="w-auto mx-4 shadow-md">
                   <a className="block relative h-48 rounded overflow-hidden">
-                    <Image
+                    <Image 
+                      layout="fill"
                       alt="ecommerce"
                       className="object-contain object-center w-full h-full block"
                       src={builder.image(item.image).width(200).url()}
@@ -194,6 +197,7 @@ const ProductsCarousel = ({ phones, appliances }) => {
                     </h2>
                     <p>{item.title}</p>
                     <p className="mt-1 text-green-600">₹{item.price}<span className="line-through decoration-2 decoration-slate-500">₹{item.mrp}</span></p>
+
                   </div>
                 </div>
               </Link> ) })}
@@ -208,3 +212,4 @@ const ProductsCarousel = ({ phones, appliances }) => {
 }
 
 export default ProductsCarousel;
+

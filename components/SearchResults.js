@@ -28,7 +28,7 @@ const SearchResults = ({items}) => {
             Search Result(s)
           </p>
           <hr />
-         <div className="grid grid-cols-3">
+         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
           {items.filter(function (item) {
             return (item.title).toLowerCase().includes(search.toLowerCase()) ||  (item.brand).toLowerCase().includes(search.toLowerCase())}).map((product) => {
             return (
@@ -38,6 +38,7 @@ const SearchResults = ({items}) => {
                    <div>
                     <a className="block relative h-48 rounded overflow-hidden justify-center">
                       <Image
+                        layout='fill'
                         alt="ecommerce"
                         className="object-contain object-center w-full h-full block"
                         src={builder.image(product.image).width(300).url()}
